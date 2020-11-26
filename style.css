@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+/* ------------------------ Side Nav Bar positioning ------------------------ */
+
+.navBar {
+  position: relative; /* fixing the navbar to side; PC:view port ; made relative to be scrollable*/
+  left: 0;
+  top: 0;
+  min-height: 100vh; /* to take full height if view port */
+  min-width: 250px;
+  max-width: 250px; /* this is given to solve the width issue */
+  background-color: #32373d;
+  transition: all 0.3s ease;
+}
+
+/* --------------------------- NavBar top styling --------------------------- */
+
+.navBar__top {
+  width: 100%;
+  height: 250px;
+  display: flex; /* makes its child elem inline-block display */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to bottom, #f1f2f48c 0%, #5a585959 83%),
+    url(images/landBg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.navBar__topLogo {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background: url(images/kangaroo.jpg) no-repeat center center/cover;
+}
+
+.navBar__top h2 {
+  margin-top: 16px;
+}
+
+/* ---------------------- NavBar link contents styling ---------------------- */
+
+.navBar__item {
+  height: 60px; /*ht of each li*/
+  display: flex;
+  align-items: center;
+  padding: 15px 30px; /* 1:2 ratio for padding is given - best practice */
+  color: rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.navBar__item a {
+  font-size: 15px;
+  margin-right: 20px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ------------------------------ hover effect ------------------------------ */
+
+.navBar__item:hover a {
+  color: #fff;
+}
+
+.navBar__item:hover {
+  color: #fff;
+  background: #2f89fc;
+  border-bottom: 1px solid #2f89fc;
+}
+
+/* -------------------------- active -click effect -------------------------- */
+/* when there is an active class for the li */
+.navBar__item.active a {
+  color: #fff;
+  font-weight: 600;
+}
+.navBar__item.active {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* --------------------------- Toggle arrow effect style --------------------------- */
+
+.toggle__arrow {
+  position: absolute;
+  top: 5px;
+  right: -40px;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #2f89fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.toggle__arrow ion-icon {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.toggle__arrow.collapse ion-icon {
+  transform: rotate(180deg);
+  cursor: pointer;
+}
+
+.navBar.collapse {
+  transform: translateX(-100%);
+}
+
+.pgContent {
+  width: 100%;
+  color: black;
+  padding: 50px 30px 50px 0px;
+  margin-left: 50px;
+  transition: all 0.3s;
+}
+
+.pgContent.collapse {
+  position: relative;
+  top: 0;
+  left: -15%;
+  width: 100%;
+  padding: 50px 30px 50px 0px;
+  margin-left: 50px;
+}
