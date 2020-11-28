@@ -29,15 +29,21 @@ li {
 /* ------------------------ Side Nav Bar positioning ------------------------ */
 
 .navBar {
-  position: relative; /* fixing the navbar to side; PC:view port ; made relative to be scrollable*/
+  position: fixed; /* fixing the navbar to side; PC:view port ; made relative to be scrollable*/
   left: 0;
   top: 0;
-  min-height: 100vh; /* to take full height if view port */
+  height: 100vh; /* to take full height of view port */
   min-width: 250px;
   max-width: 250px; /* this is given to solve the width issue */
   background-color: #32373d;
   transition: all 0.3s ease;
+  overflow-y: visible;
 }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+/* .navBar::-webkit-scrollbar{
+  display: none;
+} */
 
 /* --------------------------- NavBar top styling --------------------------- */
 
@@ -112,8 +118,8 @@ li {
 
 .toggle__arrow {
   position: absolute;
-  top: 5px;
-  right: -40px;
+  top: 10px;
+  right: -25px;
   width: 30px;
   height: 30px;
   border-radius: 5px;
@@ -121,8 +127,9 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 16px;
+  font-size: 17px;
   cursor: pointer;
+  transform: translateX(50%);
 }
 
 .toggle__arrow ion-icon {
@@ -139,18 +146,14 @@ li {
 }
 
 .pgContent {
-  width: 100%;
+  width: calc(100% - 250px);
   color: black;
-  padding: 50px 30px 50px 0px;
+  padding: 50px 15px;
   margin-left: 50px;
   transition: all 0.3s;
+  margin-top: 20px;
 }
 
 .pgContent.collapse {
-  position: relative;
-  top: 0;
-  left: -15%;
   width: 100%;
-  padding: 50px 30px 50px 0px;
-  margin-left: 50px;
 }
